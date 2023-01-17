@@ -1,0 +1,70 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+.leaderboard {
+  .page-title {
+    @include page-title;
+  }
+
+.table {
+  width: 90%;
+  margin-inline: auto;
+.headers {
+    background-color: $table-header--bg-color;
+    color: $headings--font-color;
+    font-size: $table-header--font-size;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    font-weight: 500;
+    padding-inline: 10px;
+    .th {
+      min-width:  5rem;
+      text-align: center;
+      font-weight: 600;
+      &.th-left {
+        text-align: left;
+      }
+      &.full-width {
+        flex: 1;
+      }
+    }
+  }
+  .table-body {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 10px;
+    .tr {
+      display: flex;
+      align-items: center;
+      height: 70px;
+      font-size: $table-cell--font-size;
+      color: $table--font-color;
+      .td {
+        min-width: 5rem;
+        text-align: center;
+        &.country-cell {
+          flex: 1;
+          align-items: center;
+          text-align: left;
+          .country {
+            display: flex;
+            align-items: center;
+            img {
+              width: 53px;
+              height: 37px;
+              object-fit: contain;
+              margin-right: 20px;
+            }
+          }
+        }
+        &.is-bold{
+          font-size: $table-strong-cell--font-size;
+          color:$header--bg-color;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+}

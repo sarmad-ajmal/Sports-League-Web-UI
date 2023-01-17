@@ -1,0 +1,65 @@
+@import "../../styles/index.scss";
+
+$navbar-height: 60px;
+$footer-height: 40px;
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $navbar-height;
+    width: 100%;
+    background-color: $header--bg-color;
+    padding-inline: 40px;
+    .logo {
+      width: 110px;
+      img {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        object-fit: contain;
+      }
+    }
+    .nav-items {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      :not(:last-child) {
+        margin-right: 40px;
+      }
+      a {
+        text-decoration: none;
+        span {
+          @include content-center-d;
+          font-size: $menu--font-size;
+          color: $menu--font-color;
+          img {
+            height: 25px;
+            width: auto;
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+  }
+  .content {
+    height: calc(100vh - $footer-height - $navbar-height);
+    overflow: auto;
+  }
+  .footer {
+    height: $footer-height;
+    width: 100%;
+    background-color: $footer--bg-color;
+    color: $footer--font-color;
+    display: flex;
+    padding-inline: 40px;
+    .api-version {
+      @include content-center-d;
+      margin-left: auto;
+    }
+  }
+}

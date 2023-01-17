@@ -1,0 +1,117 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+.schedules {
+  .page-title {
+    @include page-title;
+  }
+
+  .table {
+    width: 90%;
+    margin-inline: auto;
+    .headers {
+      background-color: $table-header--bg-color;
+      color: $headings--font-color;
+      font-size: $table-header--font-size;
+      display: flex;
+      height: 40px;
+      align-items: center;
+      font-weight: 500;
+      padding-inline: 10px;
+      .th {
+        min-width: 5rem;
+        text-align: center;
+        font-weight: 600;
+        &.th-left {
+          text-align: left;
+        }
+        &.full-width {
+          flex: 1;
+        }
+        &.date-time {
+          min-width: 10rem;
+          @include mobile-hidden;
+        }
+        &.stadium {
+          min-width: 10rem;
+          @include tablet-hidden;
+
+        }
+        &.team-score {
+          min-width: 5rem;
+        }
+        &.away-team {
+          text-align: start;
+          flex: 1;
+        }
+        &.home-team {
+          flex: 1;
+          text-align: end;
+        }
+      }
+    }
+    .table-body {
+      display: flex;
+      flex-direction: column;
+      padding-inline: 10px;
+      .tr {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        font-size: $table-cell--font-size;
+        color: $table--font-color;
+        .td {
+          min-width: 5rem;
+          text-align: center;
+          &.country-cell {
+            align-items: center;
+            flex: 1;
+            font-weight: 700;
+            .country {
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+              img {
+                width: 53px;
+                height: 37px;
+                object-fit: contain;
+              }
+              &.home {
+                justify-content: flex-end;
+                span {
+                }
+                img {
+                  margin-left: 20px;
+                }
+              }
+              &.away {
+                span {
+                }
+                img {
+                  margin-right: 20px;
+                }
+              }
+            }
+          }
+
+          &.date-time {
+            min-width: 10rem;
+            display: flex;
+            flex-direction: column;
+            @include mobile-hidden;
+            .time {
+              margin-top: 3px;
+            }
+          }
+          &.stadium {
+            min-width: 10rem;
+            @include tablet-hidden;
+          }
+          &.team-score {
+            min-width: 5rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "./variables.scss";
+@mixin content-center-d {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin page-title {
+  font-size: $headings-font--size;
+  color: $headings--font-color;
+  width: 100%;
+  @include content-center-d;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+@mixin tablet-hidden {
+  @media only screen and (max-width: 750px) {
+    display: none;
+  }
+}
+@mixin mobile-hidden {
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
+}

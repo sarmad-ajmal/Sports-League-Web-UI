@@ -1,0 +1,9 @@
+@import '../../../styles/index.scss';
+.page-404 {
+  @include content-center-d;
+  img {
+    height: auto;
+    display: inline-block;
+    object-fit: contain;
+  }
+}
